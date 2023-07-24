@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import './Header.css';
+import React, { useEffect, useState } from 'react';
 import { TextInput } from '../TextInput/TextInput';
 import { useNavigate } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
+
+
 
 export const Header = () => {
 
@@ -18,7 +21,7 @@ export const Header = () => {
 
   return (
     <>
-        <Container fluid>
+        <Container fluid xs={10} md={4} xl={4}>
       <Row className="justify-content-center py-5 bg-info">
         <Col
           className="d-flex justify-content-center"
@@ -30,7 +33,7 @@ export const Header = () => {
           <TextInput
             name="search"
             type="text"
-            placeholder="search a character..."
+            placeholder="Busca pelicula o serie ..."
             state = {setSearchInfo}
           />
         </Col>

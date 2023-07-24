@@ -1,6 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import React, { useEffect, useState } from 'react'
-import { bringPeliculas } from '../../services/apiCalls'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useState } from 'react';
+import { bringPeliculas, bringSeries, bringTop20 } from '../../services/apiCalls';
 import { CardPeliculas } from '../common/CardPeliculas/CardPeliculas';
 import { Container, Row } from 'react-bootstrap';
 import './Home.css'
@@ -24,7 +24,7 @@ export const Home = () => {
   return (
     <>
     <Container xs={11} md={4} lg={2} >
-      <Row className = " d-flex align-items-center justify-content-center">
+      <Row className = "d-flex align-items-center justify-content-center">
     {peliculas.length > 0 ? (
         <>
           {peliculas.map((card) => {

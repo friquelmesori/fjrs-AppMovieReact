@@ -1,6 +1,14 @@
+import { useEffect } from 'react';
 import './TextInput.css';
 
-export const TextInput = (type, placeholder, name, state) => {
+// Sintaxis ({ props... }) error cometido
+export const TextInput = ({name, type, placeholder, state}) => {
+
+  useEffect(() => {
+    // if(searchInfo !== ""){
+        // console.log("state ... ", state);
+    // }
+  }, [])
 
     const inputHandler = ({ target }, state) => {
 
@@ -11,16 +19,17 @@ export const TextInput = (type, placeholder, name, state) => {
         //     ...prevState, 
         //     [name] : value
         // }));
-
+      // console.log(value);
+        // console.log("state ... ", state);
         state(value);
     };
 
   return (
     <>
         <input className='inputDesign'
+            name = {name}
             type = {type}
             placeholder = {placeholder}
-            name = {name}
             onChange = {(e) => inputHandler (e, state)}
         />
     </>
